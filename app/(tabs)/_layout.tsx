@@ -1,70 +1,51 @@
-import { SymbolView } from 'expo-symbols';
-import { Link, Tabs } from 'expo-router';
-import { Platform, Pressable } from 'react-native';
+import { Tabs }from "expo-router"
 
-import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import Header from "../components/header"
+import style from "@/constants/styles"
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+import { Home, CalendarDays} from "lucide-react-native"
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+export default function root(){
+  return(
+    <Tabs screenOptions={{
+        tabBarStyle:{
+          backgroundColor: style.c6,
+          borderTopWidth: 0,
+          elevation: 0,       
+          shadowOpacity: 0,
+        },
+        tabBarActiveTintColor: style.c4,
+        tabBarInactiveTintColor: style.c5,
+        tabBarLabelStyle: {
+          fontFamily: style.font1,
+          fontSize: 12,
+          fontWeight: 700
+        },
       }}>
-      <Tabs.Screen
-        name="index"
+      <Tabs.Screen 
+        name="index" 
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
-              }}
-              tintColor={color}
-              size={28}
-            />
-          ),
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable style={{ marginRight: 15 }}>
-                {({ pressed }) => (
-                  <SymbolView
-                    name={{ ios: 'info.circle', android: 'info', web: 'info' }}
-                    size={25}
-                    tintColor={Colors[colorScheme].text}
-                    style={{ opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
+          title:"Início",
+          header:()=>{
+            return(<Header title="SaintScale" ></Header>)
+          },
+          tabBarIcon: ({ color, size }) => (
+            <Home size={size} color={color} strokeWidth={2.2} />
           ),
         }}
       />
-      <Tabs.Screen
-        name="two"
+      <Tabs.Screen 
+        name="scale" 
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{
-                ios: 'chevron.left.forwardslash.chevron.right',
-                android: 'code',
-                web: 'code',
-              }}
-              tintColor={color}
-              size={28}
-            />
+          title:"Escala",
+          header:()=>{
+            return(<Header title="SaintScale" ></Header>)
+          },
+          tabBarIcon: ({ color, size }) => (
+            <CalendarDays size={size} color={color} strokeWidth={2.2} />
           ),
         }}
       />
     </Tabs>
-  );
+  )
 }

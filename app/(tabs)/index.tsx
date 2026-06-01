@@ -1,31 +1,36 @@
-import { StyleSheet } from 'react-native';
+import Section from "@/components/sections"
+import { StyleSheet, View } from "react-native"
+import sty from "@/constants/styles"
+import Container from "@/components/container"
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import Infos from "@/components/infos"
+import { User , Music2} from "lucide-react-native"
 
-export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
-  );
+export default function index(){
+    return(
+    <View style={style.container}>
+        <Section
+            title="Equipes / Ministérios"
+            btnTitle="Entrar"
+            func={()=> {}}
+        >
+            <Container 
+                title="Ministério de Louvor"
+                Img={require("@/sources/1.jpg")}
+            >
+                <Infos title="23" icon={User} width={"45%"}></Infos>
+                <Infos title="152" icon={Music2} width={"55%"}></Infos>
+            </Container>
+        </Section>
+    </View>)
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
+const style = StyleSheet.create({
+    container:{
+        backgroundColor: sty.c7,
+        flex: 1,
+        gap: 10,
+        paddingTop: 10
+    }
+})
+
