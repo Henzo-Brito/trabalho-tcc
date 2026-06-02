@@ -4,7 +4,7 @@ import sty from "@/constants/styles";
 
 type Props = {
     title: string
-    btnTitle: string
+    btnTitle?: string
     func: ()=> void
     children: ReactNode
 }
@@ -31,11 +31,12 @@ const style = StyleSheet.create({
         gap: 10,
     },
     title:{
-        padding: 20,
+        paddingInline: 20,
+        paddingBlock: 10,
         color: sty.c4,
         fontWeight: 600,
         fontSize: 17,
-        width: "75%",
+        width: "78%",
     },
     topper:{
         display: "flex",
@@ -45,7 +46,7 @@ const style = StyleSheet.create({
         width: "100%"
     },
     btn:{
-        width: "25%",
+        width: "27%",
         paddingRight: 8
     },
     btnText:{

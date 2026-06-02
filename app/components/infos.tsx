@@ -21,7 +21,7 @@ export default function Infos({title, icon: Icon, width=35}:Props){
         title:{
             fontWeight: 700,
             fontFamily: sty.font1,
-            fontSize: 13,
+            fontSize: 16,
             color: sty.c5,
             flex: 1,
             textAlign: "left",
@@ -31,7 +31,7 @@ export default function Infos({title, icon: Icon, width=35}:Props){
 
     return (
         <View style={style.container}>
-            <Icon size={18} color={sty.c5} strokeWidth={3.4} />
+            <Icon size={17} color={sty.c5} strokeWidth={3.4} />
             <Text style={style.title} numberOfLines={1}>{title}</Text>
         </View>
     )

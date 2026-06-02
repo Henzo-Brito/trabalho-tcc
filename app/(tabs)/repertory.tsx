@@ -5,7 +5,7 @@ import sty from "@/constants/styles"
 export default function index(){
     return(
     <View style={style.container}>
-        <Select selects={["21","21","31"]}/>
+        <Select selects={["21","31"]}/>
     </View>)
 }
 

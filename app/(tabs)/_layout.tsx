@@ -46,6 +46,18 @@ export default function root(){
           ),
         }}
       />
+      <Tabs.Screen 
+        name="repertory" 
+        options={{
+          title:"Repertório",
+          header:()=>{
+            return(<Header title="Repertório" ></Header>)
+          },
+          tabBarIcon: ({ color, size }) => (
+            <Home size={size} color={color} strokeWidth={2.2} />
+          ),
+        }}
+      />
     </Tabs>
   )
 }
