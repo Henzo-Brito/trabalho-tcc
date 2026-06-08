@@ -8,9 +8,10 @@ type Props ={
     title: string
     icon: LucideIcon
     width?: DimensionValue
+    color?: string
 }
 
-export default function Infos({title, icon: Icon, width=35}:Props){
+export default function Infos({title, icon: Icon, width=35, color=sty.c5}:Props){
     const style = StyleSheet.create({
         container:{
             flexDirection: "row",
@@ -22,7 +23,7 @@ export default function Infos({title, icon: Icon, width=35}:Props){
             fontWeight: 700,
             fontFamily: sty.font1,
             fontSize: 16,
-            color: sty.c5,
+            color: color,
             flex: 1,
             textAlign: "left",
             overflow: "hidden",
@@ -31,7 +32,7 @@ export default function Infos({title, icon: Icon, width=35}:Props){
 
     return (
         <View style={style.container}>
-            <Icon size={17} color={sty.c5} strokeWidth={3.4} />
+            <Icon size={17} color={color} strokeWidth={3} />
             <Text style={style.title} numberOfLines={1}>{title}</Text>
         </View>
     )

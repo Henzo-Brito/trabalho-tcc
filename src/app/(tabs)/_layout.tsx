@@ -1,9 +1,11 @@
-import { Tabs }from "expo-router"
+import { router, Tabs }from "expo-router"
 
-import Header from "../components/header"
+import Header from "../../components/header"
 import style from "@/constants/styles"
 
-import { Home, CalendarDays} from "lucide-react-native"
+import { Home, CalendarDays, Search, Music} from "lucide-react-native"
+
+import IconBtn from "@/components/iconBtn"
 
 export default function root(){
   return(
@@ -39,7 +41,7 @@ export default function root(){
         options={{
           title:"Escala",
           header:()=>{
-            return(<Header title="SaintScale" ></Header>)
+            return(<Header title="Minha Escala" ></Header>)
           },
           tabBarIcon: ({ color, size }) => (
             <CalendarDays size={size} color={color} strokeWidth={2.2} />
@@ -51,10 +53,12 @@ export default function root(){
         options={{
           title:"Repertório",
           header:()=>{
-            return(<Header title="Repertório" ></Header>)
+            return(<Header title="Repertório" >
+              <IconBtn func={()=>{ router.push("/repertory/search")}} icon={Search} stroke={3}></IconBtn>
+            </Header>)
           },
           tabBarIcon: ({ color, size }) => (
-            <Home size={size} color={color} strokeWidth={2.2} />
+            <Music size={size} color={color} strokeWidth={2.2} />
           ),
         }}
       />

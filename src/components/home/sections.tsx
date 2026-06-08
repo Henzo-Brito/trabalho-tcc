@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity} from "react-native"
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView} from "react-native"
 import { ReactNode } from "react";
 import sty from "@/constants/styles";
 
@@ -13,14 +13,14 @@ export default function Section({ title, btnTitle="ver todos >", func, children}
     return (
         <View style={style.container}>
             <View style={style.topper}>
-                <Text style={style.title}>{title}</Text>
-                <TouchableOpacity onPress={func} style={style.btn}>
-                    <Text style={style.btnText}>{btnTitle}</Text>
+                <Text style={style.title} numberOfLines={1}>{title}</Text>
+                <TouchableOpacity onPress={func}>
+                    <Text style={style.btnText} numberOfLines={1}>{btnTitle}</Text>
                 </TouchableOpacity>
             </View>
-            <View style={style.children}>
+            <ScrollView contentContainerStyle={style.children} horizontal={true} showsHorizontalScrollIndicator={false}>
                 {children}
-            </View>
+            </ScrollView>
         </View>
     )
 }
@@ -28,26 +28,23 @@ export default function Section({ title, btnTitle="ver todos >", func, children}
 const style = StyleSheet.create({
     container:{
         width: "100%",
-        gap: 10,
+        columnGap: 15,
+        rowGap: 10,
     },
     title:{
-        paddingInline: 20,
-        paddingBlock: 10,
         color: sty.c4,
         fontWeight: 600,
-        fontSize: 17,
-        width: "78%",
+        fontSize: 18,
+        flex: 1,
+        overflow: "hidden",
     },
     topper:{
+        paddingInline: 15,
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         flexDirection: "row",
         width: "100%"
-    },
-    btn:{
-        width: "27%",
-        paddingRight: 8
     },
     btnText:{
         width: "100%",
@@ -59,10 +56,9 @@ const style = StyleSheet.create({
         fontSize: 16
     },
     children:{
+        paddingInline: 15,
         flexDirection: "row",
         gap: 10,
-        overflowX: "scroll",
-        paddingInline: 20,
     }
 })
 

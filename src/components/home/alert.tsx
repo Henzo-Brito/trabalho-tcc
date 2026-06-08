@@ -6,11 +6,12 @@ type Props ={
     icon: LucideIcon
     title: string
     desc: string
+    func: ()=>void
 }
 
-export default function Alert({icon: Icon, title, desc}: Props){
-    return(<TouchableOpacity style={styles.container}>
-        <Icon strokeWidth={2.2} color={style.c4} style={styles.left}/>
+export default function Alert({icon: Icon, title, desc, func}: Props){
+    return(<TouchableOpacity onPress={func} style={styles.container}>
+        <Icon strokeWidth={2.2} color={style.c4}/>
         <View style={styles.right}>
             <Text numberOfLines={1} style={styles.title}>{title}</Text>
             <Text numberOfLines={1} style={styles.text}>{desc}</Text>
@@ -25,8 +26,9 @@ const styles = StyleSheet.create({
         gap: 10,
         borderRadius: 10,
         backgroundColor: style.c6,
-        width: "100%",
-        padding: 10
+        width: 230,
+        maxWidth: 350,
+        padding: 15
     },
     text:{
         color: style.c5,
@@ -43,8 +45,5 @@ const styles = StyleSheet.create({
     right:{
         width: "80%"
     },
-    left:{
-        width: "20%"
-    }
 })
 

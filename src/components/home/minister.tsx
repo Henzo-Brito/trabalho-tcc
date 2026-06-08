@@ -18,19 +18,18 @@ export default function Minister({children,title="Título",Img, func}: Props){
             backgroundColor: sty.c4
         },
         right:{
-            paddingLeft: 10,
             flex: 1,
-            justifyContent: "space-around",
+            justifyContent: "center",
+            gap: 5,
             height: 60
         },
         title:{
-            fontSize: 18,
+            fontSize: 16,
             width: "100%",
             overflow: "hidden",
             fontFamily: sty.font1,
             fontWeight: 800,
             color: sty.c4,
-            lineHeight: 17
         },
         container:{
             flexDirection: "row",
@@ -39,7 +38,8 @@ export default function Minister({children,title="Título",Img, func}: Props){
             width: 250,
             borderRadius: 10,
             padding: 10,
-            height: 90
+            height: 90,
+            gap: 10
         },
         childrens:{
             flexDirection: "row",

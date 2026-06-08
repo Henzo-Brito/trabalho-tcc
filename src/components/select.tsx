@@ -70,22 +70,22 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         backgroundColor: style.c6,
-        borderRadius: 18,
+        borderRadius: 10,
         overflow: "hidden",
         position: "relative",
-        width: "90%"
+        width: "100%"
     },
 
     indicator: {
         position: "absolute",
         height: "100%",
         backgroundColor: style.c1,
-        borderRadius: 18,
+        borderRadius: 10,
     },
 
     select: {
         flex: 1,
-        paddingVertical: 12,
+        paddingVertical: 8,
         alignItems: "center",
         zIndex: 1,
     },
