@@ -66,7 +66,7 @@ export default function index(){
         <Section
             title="Minhas Escalas"
             btnTitle="ver todas >"
-            func={()=>{}}
+            func={()=>{ router.push("/scale") }}
         >
                 <Scales 
                     Date={{
@@ -165,7 +165,8 @@ export default function index(){
 const style = StyleSheet.create({
     container:{
         gap: 25,
-        paddingBlock: 15
+        paddingBlock: 15,
+        width: "100%"
     }
 })
 

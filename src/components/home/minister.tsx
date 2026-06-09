@@ -24,21 +24,22 @@ export default function Minister({children,title="Título",Img, func}: Props){
             height: 60
         },
         title:{
-            fontSize: 16,
+            fontSize: 20,
             width: "100%",
             overflow: "hidden",
             fontFamily: sty.font1,
-            fontWeight: 800,
+            fontWeight: 700,
             color: sty.c4,
         },
         container:{
             flexDirection: "row",
             alignItems: "center",
             backgroundColor: sty.c1,
-            width: 250,
+            width: "100%",
+            maxWidth: 420,
             borderRadius: 10,
             padding: 10,
-            height: 90,
+            height: 100,
             gap: 10
         },
         childrens:{
@@ -52,7 +53,7 @@ export default function Minister({children,title="Título",Img, func}: Props){
             <Image source={Img} style={style.left}></Image>
 
             <View style={style.right}>
-                <Text style={style.title} numberOfLines={2}>
+                <Text style={style.title} numberOfLines={1}>
                     {title}
                 </Text>
                 <View style={style.childrens}>

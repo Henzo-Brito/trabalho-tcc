@@ -39,7 +39,7 @@ export default function Index() {
   const {diaSemana,dia, mes} = dateConverser(selectedDate)
 
   return (
-    <ScrollView contentContainerStyle={style.container}>
+    <ScrollView style={{flex:1, backgroundColor: sty.c7}} contentContainerStyle={style.container}>
       <Calendar
         initialDate="2026-06-08"
         compromissos={[
@@ -123,7 +123,6 @@ export default function Index() {
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor: sty.c7,
         padding: 15,
         gap: 15
     },

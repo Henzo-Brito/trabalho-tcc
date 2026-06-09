@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     width: "100%",
     borderWidth: 2,
+    maxWidth: 500,
     borderColor: style.c5,
 },
 });

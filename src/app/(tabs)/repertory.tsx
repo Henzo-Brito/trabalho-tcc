@@ -5,7 +5,7 @@ import Music from "@/components/repertory/music"
 
 export default function index(){
     return(
-    <ScrollView contentContainerStyle={style.container}>
+    <ScrollView style={{flex:1, backgroundColor: sty.c7}} contentContainerStyle={style.container}>
         <Select selects={["Músicas", "Artistas"]}/>
         <Music 
             authors={["Nívea Soares", "aaaaaaaaaaaaaaaa"]}
@@ -66,9 +66,8 @@ export default function index(){
 
 const style = StyleSheet.create({
     container:{
-        backgroundColor: sty.c7,
         gap: 20,
         padding: 15,
-        width: "100%"
+        width: "100%",
     }
 })

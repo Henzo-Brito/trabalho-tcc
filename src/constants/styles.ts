@@ -7,7 +7,7 @@ const style = {
     c5: "rgb(192, 183, 236)",
     c6: "rgb(18, 14, 26)",
     c7: "rgb(24, 21, 41)",
-    c8: "rgb(57, 53, 92)",
+    c8: "rgb(63, 58, 114)",
 }
 
 export default style

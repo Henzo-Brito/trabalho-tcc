@@ -54,7 +54,7 @@ const style = StyleSheet.create({
         padding: 10,
         width: 250,
         gap: 5,
-        maxWidth: 300
+        maxWidth: 350,
     },
     header: {
         flexDirection: "row",
@@ -65,26 +65,26 @@ const style = StyleSheet.create({
     left:{
         color: sty.c7,
         fontWeight: 600,
-        fontSize: 12
+        fontSize: 14
     },
     right:{
         color: sty.c7,
         fontWeight: 600,
-        fontSize: 12
+        fontSize: 14
     },
     title:{
         color: sty.c6,
         fontWeight: 600,
-        fontSize: 20
+        fontSize: 23
     },
     persons:{
         paddingInline: 5,
         flexDirection: "row"
     },
     img:{
-        width: 35,
-        height: 35,
-        borderRadius: 20,
+        width: 40,
+        height: 40,
+        borderRadius: 40,
         marginLeft: -10,
         borderWidth: 3,
         borderColor: sty.c3
